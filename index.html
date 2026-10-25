@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Comando Provinciale Vigili del Fuoco Roma</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#f3f4f6; --surface:#ffffff; --ink:#15171c; --muted:#555b66; --line:#d9dce2;
+  --red:#d4181f; --red-ink:#ffffff; --yellow:#ffc600; --band:#15171c;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#121317;--surface:#1b1d23;--ink:#f1f2f4;--muted:#a3a9b5;--line:#2d3038;--red:#ee3a40;--band:#0b0c0f}
+}
+:root[data-theme="dark"]{--bg:#121317;--surface:#1b1d23;--ink:#f1f2f4;--muted:#a3a9b5;--line:#2d3038;--red:#ee3a40;--band:#0b0c0f}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Barlow",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:17px;line-height:1.55}
+h1,h2,h3{font-family:"Barlow Condensed","Arial Narrow",Arial,sans-serif;line-height:1.05;margin:0;letter-spacing:.01em}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+.livery{height:16px;background:repeating-linear-gradient(135deg,var(--red) 0 18px,#fff 18px 36px)}
+nav{border-bottom:1px solid var(--line);background:var(--surface)}
+nav .wrap{display:flex;gap:4px 22px;flex-wrap:wrap;align-items:center;padding-top:10px;padding-bottom:10px}
+nav b{font:700 21px "Barlow Condensed",Arial,sans-serif;text-transform:uppercase;margin-right:auto}
+nav a{color:var(--ink);text-decoration:none;font-weight:600;font-size:15px;padding:6px 0;border-bottom:3px solid transparent}
+nav a:hover{color:var(--red)}
+nav a[aria-current="page"]{color:var(--red);border-bottom-color:var(--red)}
+a:focus-visible,.btn:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+.hero{padding:60px 0 52px;border-bottom:1px solid var(--line)}
+.hero h1{font-size:clamp(46px,9vw,92px);font-weight:700;text-transform:uppercase;max-width:11ch}
+.hero h1 span{color:var(--red)}
+.hero p{max-width:54ch;color:var(--muted);font-size:19px;margin:22px 0 0}
+.pagehead{padding:44px 0 6px}
+h2{font-size:clamp(36px,6vw,56px);font-weight:700;margin-bottom:10px}
+.lead{color:var(--muted);max-width:60ch;margin:0 0 26px}
+.btn{display:inline-block;padding:15px 26px;font:600 18px "Barlow",system-ui,sans-serif;text-decoration:none;border-radius:4px;border:2px solid var(--red);cursor:pointer}
+.btn.primary{background:var(--red);color:var(--red-ink)}
+.btn.off{opacity:.55;cursor:not-allowed}
+.block{padding:30px 0 56px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.box{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--red);padding:24px 26px;border-radius:0 6px 6px 0}
+.box h3{font-size:28px;margin-bottom:12px}
+.box ul{margin:0;padding-left:20px}
+.box li{margin:6px 0}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;padding:36px 0 56px}
+.card{display:block;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-top:6px solid var(--red);padding:24px;border-radius:0 0 6px 6px}
+.card:hover{border-top-color:var(--yellow)}
+.card h3{font-size:32px;margin-bottom:8px}
+.card p{margin:0 0 14px;color:var(--muted)}
+.card span{font-weight:600;color:var(--red)}
+.steps{list-style:none;margin:30px 0 28px;padding:0;display:grid;gap:14px;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:start;background:var(--surface);border:1px solid var(--line);padding:18px 20px;border-radius:6px}
+.steps li::before{content:counter(s);font:700 34px/1 "Barlow Condensed",Arial,sans-serif;background:var(--red);color:var(--red-ink);width:52px;height:52px;display:grid;place-items:center;border-radius:4px}
+.steps strong{display:block;font-size:20px}
+.steps span{color:var(--muted)}
+.serv{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:24px}
+.serv div{background:var(--surface);border:1px solid var(--line);border-top:6px solid var(--red);padding:20px;border-radius:0 0 6px 6px}
+.serv h3{font-size:26px;margin-bottom:8px}
+.serv p{margin:0;color:var(--muted);font-size:16px}
+.price{display:block;margin-top:10px;font:700 24px "Barlow Condensed",Arial,sans-serif;color:var(--red)}
+.notice{display:inline-block;background:var(--yellow);color:#15171c;font-weight:600;padding:8px 14px;border-radius:4px;margin-bottom:22px}
+.small{font-size:14px;color:var(--muted);margin:12px 0 0}
+.dark{background:var(--band);color:#f1f2f4;padding:34px 0 56px}
+.dark h2{color:#f1f2f4}
+.dark .lead,.dark p{color:#d4d7dd}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2px;background:#2d3038;border:2px solid #2d3038}
+.fact{background:var(--band);padding:24px}
+.fact .n{font:700 58px/1 "Barlow Condensed",Arial,sans-serif;color:var(--yellow);margin-bottom:8px}
+.fact p{margin:0}
+.sub{font-size:30px;margin:40px 0 8px;color:#f1f2f4}
+.tblwrap{overflow-x:auto;border:2px solid #2d3038}
+.tbl{width:100%;border-collapse:collapse;background:var(--band)}
+.tbl caption{caption-side:top;text-align:left;padding:14px 16px;font:700 24px "Barlow Condensed",Arial,sans-serif;color:#f1f2f4}
+.tbl th,.tbl td{padding:12px 16px;text-align:left;border-top:1px solid #2d3038;color:#d4d7dd}
+.tbl th{color:var(--yellow);font:600 14px "Barlow",sans-serif;text-transform:uppercase;letter-spacing:.06em}
+.tbl th:last-child,.tbl td:last-child{text-align:right}
+.tbl td:last-child{font:700 22px "Barlow Condensed",Arial,sans-serif;color:#fff}
+.sanz{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin:16px 0}
+.dark .warn{background:var(--yellow);color:#15171c;font-weight:600;padding:14px 18px;border-radius:4px;margin:0}
+.reg{border:1px solid var(--line);background:var(--surface);border-radius:6px;margin-bottom:10px}
+.reg summary{cursor:pointer;padding:16px 20px;font:700 26px "Barlow Condensed",Arial,sans-serif;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.reg summary::-webkit-details-marker{display:none}
+.reg summary::after{content:"+";color:var(--red);font-size:30px;line-height:1}
+.reg[open] summary::after{content:"\2212"}
+.reg[open] summary{border-bottom:1px solid var(--line)}
+.reg summary:focus-visible{outline:3px solid var(--yellow);outline-offset:-3px}
+.reg .in{padding:16px 22px 20px}
+.reg ul,.reg ol{margin:6px 0 10px;padding-left:22px}
+.reg li{margin:5px 0}
+.reg h4{font:700 20px "Barlow Condensed",Arial,sans-serif;color:var(--red);margin:14px 0 4px;text-transform:uppercase;letter-spacing:.04em}
+.reg h4:first-child{margin-top:0}
+.reg .g{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:6px 24px}
+.reg p{margin:8px 0}
+.reg code{background:var(--bg);padding:2px 6px;border-radius:3px;font-size:14px;word-break:break-word}
+.note{font-size:14px;color:var(--muted);padding:30px 0 40px}
+</style>
+</head>
+<body>
+<div class="livery" aria-hidden="true"></div>
+<nav><div class="wrap">
+  <b>VVF Roma</b>
+  <a href="#home" data-go="home">Home</a>
+  <a href="#bando" data-go="bando">Bando</a>
+  <a href="#prenotazioni" data-go="prenotazioni">Prenotazioni</a>
+  <a href="#regolamento" data-go="regolamento">Regolamento</a>
+  <a href="#info" data-go="info">Info e prezzi</a>
+</div></nav>
+
+<main>
+<!-- HOME -->
+<div id="p-home">
+  <header class="hero"><div class="wrap">
+    <h1>Vigili del Fuoco <span>Roma</span></h1>
+    <p>Il Comando Provinciale: entra nel corpo, prenota un servizio e consulta prezzi e regole.</p>
+  </div></header>
+  <div class="wrap"><div class="cards">
+    <a class="card" href="#bando" data-go="bando"><h3>Bando</h3><p>Requisiti, fasi della selezione e candidatura.</p><span>Entra nel corpo →</span></a>
+    <a class="card" href="#prenotazioni" data-go="prenotazioni"><h3>Prenotazioni</h3><p>Colloquio, attestato, estintori ed eventi.</p><span>Prenota →</span></a>
+    <a class="card" href="#regolamento" data-go="regolamento"><h3>Regolamento</h3><p>Regole, gradi, servizio e procedure del corpo.</p><span>Leggi →</span></a>
+    <a class="card" href="#info" data-go="info"><h3>Info e prezzi</h3><p>Prezzi, estintori richiesti e sanzioni.</p><span>Consulta →</span></a>
+  </div></div>
+</div>
+
+<!-- BANDO -->
+<div id="p-bando" hidden>
+  <div class="wrap pagehead"><h2>Bando di arruolamento</h2>
+    <p class="lead">Le selezioni sono aperte. Controlla di avere i requisiti, poi invia la candidatura.</p></div>
+  <div class="wrap block">
+    <div class="cols">
+      <div class="box"><h3>Fuori dal gioco (OOC)</h3><ul>
+        <li>Massima serietà</li><li>Rispetto verso i colleghi</li><li>Capacità di lavorare in squadra</li><li>Almeno 5 ore settimanali, ben distribuite</li></ul></div>
+      <div class="box"><h3>Nel gioco (IC)</h3><ul>
+        <li>Certificato anamnestico</li><li>Maggiore età</li><li>Patenti B e C</li><li>Fedina penale pulita</li><li>Nessun altro lavoro</li></ul></div>
+    </div>
+    <ol class="steps">
+      <li><div><strong>Invia la candidatura</strong><span>Compili il modulo con i dati del tuo personaggio e le informazioni fuori dal gioco.</span></div></li>
+      <li><div><strong>Fai il colloquio orale</strong><span>Ti chiederemo del tuo stato psicofisico e di quanto conosci il Corpo Nazionale dei Vigili del Fuoco.</span></div></li>
+      <li><div><strong>Ricevi l’esito</strong><span>Il bando risulta accettato ✅ oppure rifiutato ❌. Te lo comunichiamo su Discord.</span></div></li>
+    </ol>
+    <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLScjjAv4Us83B8OFqtdsAJ9ygGKylFUqxHs-c_qgHUYW73D_8g/viewform" target="_blank" rel="noopener">Invia la candidatura</a>
+  </div>
+</div>
+
+<!-- PRENOTAZIONI -->
+<div id="p-prenotazioni" hidden>
+  <div class="wrap pagehead"><h2>Prenotazioni</h2>
+    <p class="lead">Scegli il servizio, il giorno e l’orario che preferisci. Lo staff ti conferma su Discord.</p></div>
+  <div class="wrap block">
+    <div class="notice">⏰ Prenota con almeno 24 ore di preavviso</div>
+    <div class="serv">
+      <div><h3>Colloquio</h3><p>Per chi ha inviato la candidatura e vuole fissare il colloquio orale.</p></div>
+      <div><h3>Attestato Antincendio</h3><p>Prenota il corso per ottenere l’attestato, indicando persone e livello di rischio.</p><span class="price">8.000 €</span></div>
+      <div><h3>Acquisto Estintori</h3><p>Ordina estintori a polvere, a CO₂, a schiuma o idrici.</p><span class="price">1.500 € l’uno</span></div>
+      <div><h3>Creazione Evento</h3><p>Organizza un evento con il Comando: nome, partecipanti e descrizione.</p></div>
+    </div>
+    <a class="btn primary" id="prenotaBtn" href="#prenotazioni">Prenota ora</a>
+    <p class="small" id="prenotaMsg" hidden>Il link del modulo non è ancora collegato.</p>
+  </div>
+</div>
+
+<!-- REGOLAMENTO -->
+<div id="p-regolamento" hidden>
+  <div class="wrap pagehead"><h2>Regolamento Generale</h2>
+    <p class="lead">Corpo Nazionale dei Vigili del Fuoco · Comando Provinciale di Roma · IMRP. Ultima modifica: 25/10/2026.</p></div>
+  <div class="wrap block">
+
+  <details class="reg" open><summary>Compiti</summary><div class="in"><ul>
+    <li><b>Soccorso pubblico</b>: interventi tecnici urgenti per proteggere persone e beni, non solo negli incendi ma anche in crolli, frane, alluvioni e altre calamità.</li>
+    <li><b>Prevenzione incendi</b>: ispezioni e controlli per ridurre il rischio nelle attività e nei luoghi di lavoro.</li></ul></div></details>
+
+  <details class="reg"><summary>Appena assunti</summary><div class="in">
+    <h4>Da fare subito</h4><ol>
+      <li>Cambia il nickname sul Discord di IMRP: <code>[Grado abbreviato] Nome Cognome</code></li>
+      <li>Attendi i ruoli sul Discord di IMRP prima di lavorare</li>
+      <li>Apri un ticket e richiedi l’accesso al Discord Fazioni</li>
+      <li>Attendi i ruoli anche lì e guarda i canali dei VVF</li>
+      <li>Nei primi servizi lavora con un operatore più esperto</li></ol>
+    <h4>Licenziamento</h4><ul>
+      <li>Ci si può licenziare solo dopo almeno 7 giorni dall’assunzione</li>
+      <li>Per rientrare bisogna attendere 10 giorni e, se vieni accettato, si ricomincia dal grado Allievo</li></ul></div></details>
+
+  <details class="reg"><summary>Gerarchia</summary><div class="in"><div class="g">
+    <div><h4>Dirigenti</h4><ul><li>Dirigente Generale [Dir. Gen.]</li><li>Dirigente Superiore [Dir. Sup.]</li><li>Primo Dirigente [Primo Dir.]</li></ul></div>
+    <div><h4>Direttivi</h4><ul><li>D.A. Vice Dirigente [D.A. Vice Dir.]</li><li>Direttore Antincendi [D.A.]</li><li>Vice Direttore Antincendi [Vice D.A.]</li><li>Sost. D.A. Capo Esperto</li><li>Sost. D.A. Capo</li><li>Sost. D.A.</li></ul></div>
+    <div><h4>Ispettori</h4><ul><li>Ispettore Coordinatore [I.A.C.]</li><li>Ispettore Esperto [I.A.E.]</li><li>Ispettore Antincendi [I.A.]</li><li>Vice Ispettore [V.I.A.]</li></ul></div>
+    <div><h4>Capireparto e Capisquadra</h4><ul><li>Capo Reparto [C.R.]</li><li>Capo Squadra Esperto [C.S.E.]</li><li>Capo Squadra [C.S.]</li></ul></div>
+    <div><h4>Vigili del fuoco</h4><ul><li>Vigile Coordinatore [V.F.C.]</li><li>Vigile Esperto [V.F.E.]</li><li>Vigile del Fuoco [V.F.]</li><li>Allievo Vigile [A.V.F.]</li></ul></div>
+  </div></div></details>
+
+  <details class="reg"><summary>Funzioni dei gradi</summary><div class="in"><ul>
+    <li><b>Dirigenti e direttivi</b>: gestiscono il corpo e il personale. Il Dirigente Generale è il capo del corpo.</li>
+    <li><b>Ispettori</b>: supervisionano direttamente il personale. Sono la categoria più bassa dei funzionari.</li>
+    <li><b>Capi squadra e capi reparto</b>: supervisionano i gradi inferiori e rispondono ai funzionari. I capi reparto sono comandanti e vice comandanti dei reparti.</li>
+    <li><b>Vigili del Fuoco</b>: rispondono alle chiamate di emergenza. Solo dal grado di Vigile Esperto si entra nei reparti.</li></ul></div></details>
+
+  <details class="reg"><summary>Cartellino</summary><div class="in"><ul>
+    <li>Timbra uscita di servizio: con più di 15 minuti di ritardo la timbratura non è valida</li>
+    <li>Se un dirigente non trova il tuo cartellino timbrato in entrata, la timbratura è nulla</li>
+    <li>Se scordi il cartellino aperto il turno è invalidato</li>
+    <li>Dalle 02:00 alle 08:00 i cartellini non sono validi, salvo attività in corso certificate, sanzioni, attestati antincendio e vendite</li>
+    <li>Non è prevista retrocessione, solo provvedimenti scritti se si apre il cartellino per fare ore senza entrare in città</li></ul></div></details>
+
+  <details class="reg"><summary>Permessi e assenze</summary><div class="in">
+    <h4>Permessi brevi (max 2 ore)</h4><ul>
+      <li>Modulo nel canale #assenze, al massimo 15 minuti prima</li>
+      <li>Valido solo dopo l’approvazione; se respinto è invalido</li>
+      <li>Non concessi con meno di 2 operatori disponibili, salvo orari particolari</li>
+      <li>Una volta inserito, non si modifica</li></ul>
+    <h4>Assenze lunghe (3 giorni – 1 mese)</h4><ul>
+      <li>Solo se si è fuori dalla città e non si può entrare</li>
+      <li>Modulo nel canale #assenze, non modificabile</li>
+      <li>Chi non vuole più lavorare per un periodo deve licenziarsi</li></ul></div></details>
+
+  <details class="reg"><summary>Sanzioni, promozioni e comunicati</summary><div class="in"><ul>
+    <li><b>Sanzioni</b>: con 3 sanzioni si scende di un grado e si perdono i poteri del ruolo. Si azzerano col declassamento. Per tornare serve un nuovo bando o il merito</li>
+    <li><b>Promozioni e premi</b>: i dirigenti ne discutono ogni settimana. Il venerdì si indicano le assegnazioni, il sabato i dipendenti vengono convocati</li>
+    <li><b>Comunicati</b> (#Comunicati): presa visione con la spunta entro 24 ore, altrimenti sanzione non disciplinare</li>
+    <li><b>Canali Emergenza e Soccorso</b>: chi è in servizio e non è presente riceve un richiamo</li></ul></div></details>
+
+  <details class="reg"><summary>Radio</summary><div class="in"><ul>
+    <li>In servizio la radio (115) è obbligatoria</li>
+    <li>Comunicazioni brevi, accurate e complete, senza sovrapporsi</li>
+    <li>Vietata per questioni estranee al turno e in permesso</li>
+    <li>Senza radio e col cartellino timbrato: sanzione</li>
+    <li>Polizia 113 · Carabinieri 112 · Guardia di Finanza 117 · CRI 118</li></ul></div></details>
+
+  <details class="reg"><summary>Guida dei mezzi</summary><div class="in"><div class="g">
+    <div><h4>Alla guida in emergenza</h4><ul><li>Cintura per tutti</li><li>Anabbaglianti accesi</li><li>Lampeggianti (Q) con BAR, LUC e LAMP, poi lampeggiamento (9)</li><li>Sirene (2) solo dopo i lampeggianti</li><li>Massimo 120 km/h</li><li>Distanza di sicurezza</li><li>Rallenta ai semafori rossi e nelle curve</li><li>Retromarcia max 30 km/h, sterzando piano</li></ul></div>
+    <div><h4>Sul posto</h4><ul><li>Spegni le sirene, tieni lampeggianti e abbaglianti</li><li>Sgancia la cintura e apri gli sportelli (U)</li><li>Motore acceso durante il soccorso</li><li>Spegni e chiudi solo se ti allontani molto e nessuno controlla il mezzo</li><li>Entra nella selettiva del veicolo (APS: 1ª e 2ª Partenza)</li></ul></div>
+  </div></div></details>
+
+  <details class="reg"><summary>Emergenze</summary><div class="in"><div class="g">
+    <div><h4>Incendio</h4><ol><li>Raggiungi il posto con l’APS (o altri mezzi indicati)</li><li>Metti in salvo i civili; se serve chiama la Croce Rossa</li><li>Spegni con la manichetta (F6), con la schiuma se non puoi usare l’acqua</li><li>Controlla che non restino fiamme</li><li>Scrivi il verbale</li></ol></div>
+    <div><h4>Altre emergenze</h4><ul><li>Usa i mezzi adatti</li><li>Sicurezza dei civili al primo posto</li><li>Metti in sicurezza l’area prima di operare</li><li>Chiedi supporto a colleghi o forze dell’ordine</li><li>Verbale a fine emergenza</li><li>Più RP possibile con il pannello F6</li></ul></div>
+  </div></div></details>
+
+  <details class="reg"><summary>Incendi</summary><div class="in"><div class="g">
+    <div><h4>Servono tre elementi</h4><ul><li>Combustibile</li><li>Comburente (di solito l’ossigeno)</li><li>Innesco</li></ul><p>Se ne manca uno il fuoco si spegne: per esaurimento, soffocamento o raffreddamento.</p></div>
+    <div><h4>Classi</h4><ul><li><b>A</b>, ordinari (legno, carta, tessuti): polvere o acqua</li><li><b>B</b>, liquidi infiammabili (benzina, alcol, oli): schiuma, mai un getto d’acqua</li><li><b>C</b>, elettrici: anidride carbonica o schiuma, mai acqua</li></ul></div>
+  </div></div></details>
+
+  <details class="reg"><summary>Mezzi</summary><div class="in"><ul>
+    <li><b>APS</b> (autopompa serbatoio): per la maggior parte degli interventi. 1 Caposquadra e 3 Vigili (1 autista). Sempre con il Land Rover Defender di supporto</li>
+    <li><b>Autobotte</b>: circa 8.000 litri d’acqua, per grossi incendi e incendi boschivi. 1 Vigile (autista) e 1 Vigile Esperto</li>
+    <li><b>Autoscala</b>: raggiunge luoghi alti, da 20 a 50 metri. 1 Caposquadra e 1 Vigile Esperto (autista)</li></ul></div></details>
+
+  <details class="reg"><summary>Reparti</summary><div class="in"><ul>
+    <li><b>Sala Operativa</b>: coordina le partenze e gestisce chiamate ed emergenze</li>
+    <li><b>N.I.A.</b> (Nucleo Investigativo Antincendi): attestati antincendio e ispezioni</li>
+    <li><b>S.A.F.</b> (Speleo-Alpino-Fluviale): ambienti ostili</li>
+    <li><b>S.A.P.R.</b> (Sistema Aeromobile a Pilotaggio Remoto): impiega droni per ricerca, monitoraggio di calamità e ricognizione in scenari a rischio</li>
+    <li><b>S.A.S.</b> (Soccorso Acquatico di Superficie): soccorsi acquatici semplici</li>
+    <li><b>N.S.S.A.</b> (Nucleo Soccorso Subacqueo Acquatico): emergenze acquatiche gravi</li>
+    <li><b>Nucleo Elicotteri</b>: elicotteri ed elisoccorso, solo per il nucleo</li>
+    <li><b>T.P.S.S. Sanitario</b>: primo soccorso e supporto ai feriti</li>
+    <li><b>N.B.C.R.</b> (Nucleare, Biologico, Chimico, Radiologico): gestione, bonifica e messa in sicurezza da rischi nucleari, biologici, chimici e radiologici</li></ul></div></details>
+
+  <details class="reg"><summary>Annunci</summary><div class="in">
+    <p><b>Servizio attivo</b><br><code>/vvf [🔥🚒] VIGILI DEL FUOCO [🔥🚒] Vigili del fuoco attivi ora sul territorio di Roma. Chiamaci per 🔥 INCENDI, 🚗 INCIDENTI STRADALI ed ogni altra emergenza.</code></p>
+    <p><b>Con addetti N.I.A.</b><br><code>/vvf [🔥🚒] VIGILI DEL FUOCO [🔥🚒] Vigili del fuoco attivi ora sul territorio di Roma. Chiamaci per 🔥 INCENDI, 🚗 INCIDENTI STRADALI ed ogni altra emergenza. Disponibili per 🔍 ISPEZIONI, ✉️ RILASCIO ATTESTATI ANTINCENDIO, 🧯 ACQUISTO ESTINTORI e 🤿 BOMBOLE SUBACQUEE.</code></p>
+    <p><b>Con Dirigenza</b><br><code>Come sopra, più: Disponibili per 💼 Colloqui.</code></p>
+    <p><b>Chiusura strada</b><br><code>/vvf STRADA CV XXX CHIUSA CAUSA INCENDIO, NON AVVICINARSI</code></p></div></details>
+
+  <p class="small">Documento senza valore reale o legale, creato solo per il videogioco IMRP. A cura di: Alessio Rossi, Dirigente Generale.</p>
+  </div>
+</div>
+
+<!-- INFO -->
+<div id="p-info" hidden>
+  <div class="dark"><div class="wrap">
+    <div class="pagehead" style="padding-left:0"><h2>Info e prezzi</h2>
+      <p class="lead">Prezzi dei servizi e regole sugli estintori per aziende ed enti pubblici.</p></div>
+    <div class="facts">
+      <div class="fact"><div class="n">8.000 €</div><p>Attestato antincendio</p></div>
+      <div class="fact"><div class="n">1.500 €</div><p>Estintore, il prezzo è per ogni pezzo</p></div>
+    </div>
+    <h3 class="sub">Estintori richiesti</h3>
+    <p>I Vigili del Fuoco effettuano ispezioni per verificare la conformità e l’adeguatezza degli estintori in ogni ambiente. Gli estintori devono essere tutti a pieno carico.</p>
+    <div class="tblwrap"><table class="tbl">
+      <thead><tr><th>Ambienti dell’azienda</th><th>Estintori richiesti</th></tr></thead>
+      <tbody>
+        <tr><td>Da 1 a 5</td><td>3</td></tr>
+        <tr><td>Da 6 a 10</td><td>7</td></tr>
+        <tr><td>Da 11 a 15</td><td>12</td></tr>
+        <tr><td>Da 16 a 20</td><td>17</td></tr>
+        <tr><td>Da 21 a 25 o più</td><td>22</td></tr>
+      </tbody>
+    </table></div>
+    <h3 class="sub">Sanzioni</h3>
+    <p>Il mancato rispetto del numero di estintori può portare a sanzioni da 3.500 € a 35.000 €, imposte direttamente dai Vigili del Fuoco.</p>
+    <div class="sanz">
+      <div class="tblwrap"><table class="tbl"><caption>Piccole aziende (da 1 a 10 ambienti)</caption><tbody>
+        <tr><td>Manca 1 estintore</td><td>3.500 €</td></tr>
+        <tr><td>Mancano 5 estintori</td><td>7.000 €</td></tr>
+        <tr><td>Mancano tutti</td><td>15.000 €</td></tr></tbody></table></div>
+      <div class="tblwrap"><table class="tbl"><caption>Grandi aziende (da 11 a 25 o più ambienti)</caption><tbody>
+        <tr><td>Manca 1 estintore</td><td>3.500 €</td></tr>
+        <tr><td>Mancano 5 estintori</td><td>7.000 €</td></tr>
+        <tr><td>Mancano 10 estintori</td><td>15.000 €</td></tr>
+        <tr><td>Mancano tutti</td><td>35.000 €</td></tr></tbody></table></div>
+    </div>
+    <p class="warn">Senza attestato antincendio la sanzione è di 16.000 €.</p>
+  </div></div>
+</div>
+</main>
+
+<div class="wrap note">Sito di una community di gioco di ruolo. Non è il sito ufficiale del Corpo Nazionale dei Vigili del Fuoco.</div>
+
+<script>
+// Incolla qui il link del modulo prenotazioni (Link da condividere).
+var PRENOTA_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdhHRVYM1WyUdljAXNfXxakhrWTu3i0JwU7AnHhfF3DIWPqDg/viewform";
+
+var pages = ["home","bando","prenotazioni","regolamento","info"];
+function show(name){
+  if (pages.indexOf(name) < 0) name = "home";
+  pages.forEach(function(p){ document.getElementById("p-" + p).hidden = (p !== name); });
+  document.querySelectorAll("nav [data-go]").forEach(function(a){
+    if (a.getAttribute("data-go") === name) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current");
+  });
+  window.scrollTo(0,0);
+}
+document.addEventListener("click", function(e){
+  var a = e.target.closest("[data-go]");
+  if (!a) return;
+  e.preventDefault();
+  show(a.getAttribute("data-go"));
+});
+window.addEventListener("hashchange", function(){ show(location.hash.slice(1)); });
+show(location.hash.slice(1) || "home");
+
+(function(){
+  var b = document.getElementById("prenotaBtn");
+  if (PRENOTA_URL) {
+    b.href = PRENOTA_URL; b.target = "_blank"; b.rel = "noopener";
+  } else {
+    b.classList.add("off");
+    document.getElementById("prenotaMsg").hidden = false;
+    b.addEventListener("click", function(e){ e.preventDefault(); });
+  }
+})();
+</script>
+</body>
+</html>
